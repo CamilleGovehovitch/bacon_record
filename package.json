@@ -1,0 +1,24 @@
+{
+  "name": "bacon_record",
+  "version": "1.0.0",
+  "description": "music label",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass ./sass/main.scss ./assets/css/main.css",
+    "sass-watch": "sass --no-source-map --watch ./sass/main.scss ./assets/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilleGovehovitch/bacon_record.git"
+  },
+  "author": "camille govehovitch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamilleGovehovitch/bacon_record/issues"
+  },
+  "homepage": "https://github.com/CamilleGovehovitch/bacon_record#readme",
+  "dependencies": {
+    "sass": "^1.25.0"
+  }
+}
