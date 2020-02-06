@@ -1,0 +1,112 @@
+<!doctype html>
+<?php
+?>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- STYLE -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <script src="https://kit.fontawesome.com/5138cb0aad.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="">
+    <!-- FONTS -->
+    <title>Bacon Record</title>
+</head>
+<body>
+<header class="header">
+    <div class="bandeau">
+        <h3>Bacon Record, le label musical des porcs!</h3>
+    </div>
+    <div class="logo-nav-container">
+        <div class="logo-container">
+            <i class="fas fa-piggy-bank" id="logo" onclick="openSideMenu()"></i>
+        </div>
+        <div class="navbar">
+            <ul class="main-menu">
+                <li>
+                    <a href="index.php">Home</a>
+                </li>
+                <li class="catalogue-hover">
+                    <a href="#">Catalogue</a>
+                    <ul class="sub-menu">
+                        <?php foreach($artistes as $artiste): ?>
+                        <li><a href="artiste.php?id=<?php echo $artiste['Id']?>&titre=<?php echo $artiste['Name']?>"><?php echo $artiste['Name'] ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="menu-mobile" id="sideMenu">
+    <div class="navbar">
+        <ul class="main-menu">
+            <li id="mainLi">
+                <a href="#">Home</a>
+            </li>
+            <li class="catalogue-hover">
+                <a href="#">Catalogue</a>
+                <ul class="sub-menu">
+                    <?php foreach($artistes as $artiste): ?>
+                        <li id="subLi"><a href="#"><?php echo $user['Name'] ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<main class="main">
+    <div class="container">
+        <?php include $template.'.phtml' ?>
+    </div>
+</main>
+<footer class="footer">
+    <div class="social">
+        <a href="#">
+            <i class="fab fa-twitter">
+                <p>Twitter</p>
+            </i>
+        </a>
+        <a href="#">
+            <i class="fab fa-google-plus-square">
+                <p>Google+</p>
+            </i>
+        </a>
+        <a href="#">
+            <i class="fab fa-instagram">
+                <p>Instagram</p>
+            </i>
+        </a>
+        <a href="#">
+            <i class="fab fa-youtube">
+                <p>Instagram</p>
+            </i>
+        </a>
+
+    </div>
+    <div class="newsletter">
+            <h3>Newsletter</h3>
+        <div class="form">
+            <form method="POST" name="newsletter">
+                <p>
+                    <span><i class="fas fa-envelope"></i></span>
+                    <input type="text" placeholder="exemple@exemple.com" name="mail" class="mail-input" id="mailInput" required>
+                </p>
+                <input type="submit" value="Send" name="btn-send" class="btn-send">
+            </form>
+        </div>
+    </div>
+</footer>
+<script src="scripts/slideScript.js"></script>
+<script src="scripts/formEmailValidation.js"></script>
+</body>
+</html>

@@ -1,7 +1,8 @@
 <?php
-    $dbh = new PDO
+    $pdo = new pdo
         (
-            'mysql:host=localhost;dbname=test',
-            $user,
-            $pass);
+            'mysql:host=localhost;dbname=bacon_record',
+            "root",
+            ""
+        );
 ?>

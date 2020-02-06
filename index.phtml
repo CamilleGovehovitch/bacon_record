@@ -1,0 +1,98 @@
+<div class="main-container">
+    <div class="slide-news-container">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="assets/img/artwork/john-a.jpg" style="width:100%">
+<!--                <div class="text">I Am John Baudelaire</div>-->
+            </div>
+            <div class="mySlides fade">
+                <img src="assets/img/artwork/john-b.jpg" style="width:100%">
+<!--                <div class="text">I Am John Baudelaire</div>-->
+            </div>
+            <div class="mySlides fade">
+                <img src="assets/img/artwork/john-demo.jpg" style="width:100%">
+<!--                <div class="text">I Am John Baudelaire</div>-->
+            </div>
+            <div class="mySlides fade">
+                <img src="assets/img/artwork/nochys-derelict.jpg" style="width:100%">
+<!--                <div class="text">No One Can Hear You Scream</div>-->
+            </div>
+            <div class="mySlides fade">
+                <img src="assets/img/artwork/nochys-eggs.jpg" style="width:100%">
+<!--                <div class="text">No One Can Hear You Scream</div>-->
+            </div>
+            <div class="mySlides fade">
+                <img src="assets/img/artwork/tomoe-36.jpg" style="width:100%">
+<!--                <div class="text">Tomoe</div>-->
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+<!--        <div style="text-align:center">-->
+<!--            <span class="dot" onclick="currentSlide(1)"></span>-->
+<!--            <span class="dot" onclick="currentSlide(2)"></span>-->
+<!--            <span class="dot" onclick="currentSlide(3)"></span>-->
+<!--            <span class="dot" onclick="currentSlide(4)"></span>-->
+<!--            <span class="dot" onclick="currentSlide(5)"></span>-->
+<!--            <span class="dot" onclick="currentSlide(6)"></span>-->
+<!---->
+<!--        </div>-->
+        <div class="news-container">
+            <div class="news-title-section">
+                <h2>Actualités</h2>
+            </div>
+            <div class="news-card-container">
+                <?php foreach ($news as $new):?>
+                <div class="news-card">
+                    <div class="news-title">
+                        <h3><?php echo $new['Date'] ?></h3>
+                    </div>
+                    <div class="news-content">
+                        <p><?php echo $new['Content'] ?></p>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <div class="title-section">
+        <h2>Nos Artistes</h2>
+    </div>
+    <div class="band-news-container">
+        <div class="band-container">
+            <?php foreach ($artistes as $artiste): ?>
+                <a href="artiste.php?id=<?php ?>">
+                    <div class="band-card" style="background-image: url('<?php echo $artiste['Card'] ?>');">
+                        <div class="filter">
+                            <div class="title-band">
+                                <h2><?php echo $artiste['Name'] ?></h2>
+                            </div>
+                            <div class="band-content">
+                                <p><?php echo $artiste['Description'] ?></p>
+                            </div>
+                            <div class="band-style">
+                                <h3><?php echo $artiste['Style'] ?></h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            <?php endforeach; ?>
+        </div>
+
+    </div>
+    <section class="media">
+        <h2>Média</h2>
+        <div class="videos">
+            <?php foreach($videos as $video): ?>
+            <div class="video-card">
+                <div class="title-video">
+                    <h3><?php echo $video['Title']?></h3>
+                </div>
+                <div class="video-content">
+                    <?php echo $video['Url'] ?>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+</div>
